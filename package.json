@@ -35,6 +35,7 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
+    "chalk": "^2.3.1",
     "libtidy": "^0.3.7"
   },
   "devDependencies": {

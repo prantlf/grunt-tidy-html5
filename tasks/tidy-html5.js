@@ -9,6 +9,7 @@
 'use strict'
 
 const fs = require('fs')
+const chalk = require('chalk')
 const libtidy = require('libtidy')
 
 module.exports = function (grunt) {
@@ -62,7 +63,7 @@ module.exports = function (grunt) {
       return previous.then(function () {
         const document = libtidy.TidyDoc()
         document.options = tidyOptions
-        grunt.verbose.writeln('Processing "' + source + '".')
+        grunt.verbose.writeln('Processing "' + chalk.cyan(source) + '".')
         ++processed
         return new Promise(function (resolve, reject) {
           fs.readFile(source, function (error, buffer) {
