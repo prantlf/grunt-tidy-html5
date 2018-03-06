@@ -54,6 +54,10 @@ or integrate it to your build sequence in `Gruntfile.js`:
 grunt.registerTask('default', ['tidy-html5', ...]);
 ```
 
+Warnings about invalid parts of the HTML markup will be logged on the console,
+if the `quiet` mode is not enabled. If there are any, unless the task
+execution is `force`d, the task will make Grunt fail.
+
 ## Customizing
 
 Default behaviour of the task can be tweaked by the task options; these
@@ -65,6 +69,7 @@ grunt.initConfig({
     task: {
       options: {
         force: false,
+        quiet: false,
         ignoreMissing: false,
         tidyOptions: {}
       },
@@ -82,6 +87,13 @@ Default: `false`
 
 Suppresses reporting the failure to Grunt and thus stopping execution
 of further tasks, if set to `true`.
+
+#### quiet
+Type: `Boolean`
+Default: `false`
+
+Suppresses printing of errors and warnings about problems found in input
+files on the console. if set to `true`.
 
 #### ignoreMissing
 Type: `Boolean`
