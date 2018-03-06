@@ -17,10 +17,12 @@ module.exports = function (grunt) {
     const done = this.async()
     const options = this.options({
       force: false,
+      quiet: false,
       ignoreMissing: false,
       tidyOptions: {}
     })
     const force = options.force
+    const quiet = options.quiet
     const ignoreMissing = options.ignoreMissing
     const tidyOptions = options.tidyOptions
     const files = this.files
@@ -82,7 +84,9 @@ module.exports = function (grunt) {
         .then(function (result) {
           const errors = result.errlog
           if (errors.length) {
-            grunt.log.write(errors)
+            if (!quiet) {
+              grunt.log.write(errors)
+            }
             ++failed
           }
         })

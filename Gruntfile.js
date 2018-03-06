@@ -49,6 +49,9 @@ module.exports = function (grunt) {
         src: 'test/work/missing.html'
       },
       incomplete: {
+        options: {
+          quiet: true
+        },
         src: 'test/work/incomplete.html'
       },
       minimal: {
