@@ -70,6 +70,7 @@ grunt.initConfig({
       options: {
         force: false,
         quiet: false,
+        report: '',
         ignoreMissing: false,
         tidyOptions: {}
       },
@@ -95,6 +96,33 @@ Default: `false`
 Suppresses printing of errors and warnings about problems found in input
 files on the console. if set to `true`.
 
+#### report
+Type: `String`
+Default: ''
+
+Path to the file, where the report will be written. If specified, the file
+will contain an array of objects describing every problem found, for example:
+
+```json
+[
+  {
+    "type": "warning",
+    "firstColumn": 1,
+    "lastColumn": 1,
+    "lastLine": 1,
+    "message": "missing <!DOCTYPE> declaration",
+    "extract": "<html></html>",
+    "hiliteStart": 0,
+    "hiliteLength": 0,
+    "file":"test/work/incomplete.html"
+  }
+]
+```
+
+The file will have the JSON format compatible with the JSON report produced by
+[grunt-html], which is backed up by gthe [Nu Html Checker (v.Nu)]. Marking the
+invalid code excerps is not supported.
+
 #### ignoreMissing
 Type: `Boolean`
 Default: `false`
@@ -117,11 +145,12 @@ as a property value in the object.
 'tidy-html5': {
   accessibility: {
     options: {
+      report: 'output/report.json',
       tidyOptions: {
         'accessibility-check': 2
       }
     },
-    src: ['*.html']
+    src: ['input/*.html']
   }
 }
 ```
@@ -134,6 +163,7 @@ your code using Grunt.
 
 ## Release History
 
+ * 2018-03-06   v0.1.0   Write report to a file as JSON
  * 2018-02-26   v0.0.1   Initial release
 
 ## License
@@ -155,3 +185,6 @@ Licensed under the MIT license.
 [options]: https://github.com/gagern/node-libtidy/blob/master/API.md#TidyDoc.options
 [libtidy options]: https://github.com/gagern/node-libtidy/blob/master/README.md#options
 [all HTML Tidy options]: http://api.html-tidy.org/tidy/quickref_5.4.0.html
+[grunt-html]: https://github.com/jzaefferer/grunt-html
+[Nu Html Checker (v.Nu)]: https://validator.github.io/validator/
+

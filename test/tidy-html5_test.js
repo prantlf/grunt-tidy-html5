@@ -2,28 +2,30 @@
 
 const fs = require('fs')
 
-function readPage (path) {
-  const content = fs.readFileSync('test/' + path + '.html', 'utf-8')
+function readFile (path) {
+  const content = fs.readFileSync('test/' + path, 'utf-8')
   return content.replace(/\r|\n/g, '')
 }
 
-function readPages (name) {
+function readFiles (name) {
   return {
-    expected: readPage('expected/' + name),
-    work: readPage('work/' + name)
+    expected: readFile('expected/' + name),
+    work: readFile('work/' + name)
   }
 }
 
 exports['tidy-html5'] = {
   incomplete: function (test) {
-    const pages = readPages('incomplete')
-    test.expect(1)
+    const pages = readFiles('incomplete.html')
+    const reports = readFiles('incomplete.json')
+    test.expect(2)
     test.equal(pages.expected, pages.work, 'incomplete.html')
+    test.equal(reports.expected, reports.work, 'incomplete.json')
     test.done()
   },
 
   minimal: function (test) {
-    const pages = readPages('minimal')
+    const pages = readFiles('minimal.html')
     test.expect(1)
     test.equal(pages.expected, pages.work, 'minimal.html')
     test.done()

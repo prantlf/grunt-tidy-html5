@@ -50,7 +50,8 @@ module.exports = function (grunt) {
       },
       incomplete: {
         options: {
-          quiet: true
+          quiet: true,
+          report: 'test/work/incomplete.json'
         },
         src: 'test/work/incomplete.html'
       },

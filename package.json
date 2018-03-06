@@ -27,7 +27,7 @@
   },
   "main": "tasks/tidy-html5.js",
   "scripts": {
-    "security": "test `node --version | cut -c 2` -ne 4 && nsp check || echo 'No vulnerabilities check possible on Node.js 4'",
+    "prepare": "test `node --version | cut -c 2` -ne 4 && nsp check || echo 'No vulnerabilities check possible on Node.js 4'",
     "test": "grunt",
     "coverage": "grunt instrument && GRUNT_TIDY_HTML5_COVERAGE=1 grunt",
     "coveralls": "test `node --version | cut -c 2` -eq 8 && npm run coverage && grunt coveralls",
@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "chalk": "^2.3.1",
+    "mkdirp": "^0.5.1",
     "libtidy": "^0.3.7"
   },
   "devDependencies": {
