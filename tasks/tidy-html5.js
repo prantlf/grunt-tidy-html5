@@ -82,6 +82,7 @@ module.exports = function (grunt) {
         .then(function (result) {
           const errors = result.errlog
           if (errors.length) {
+            grunt.log.writeln('Problems in "' + source + '":')
             grunt.log.write(errors)
             ++failed
           }
