@@ -45,7 +45,9 @@ module.exports = function (grunt) {
     }
 
     files.reduce(function (previous, file) {
-      return file.src.reduce(process, previous)
+      return previous.then(function () {
+        return file.src.reduce(process, Promise.resolve())
+      })
     }, Promise.resolve())
     .then(function () {
       const ok = failed ? force ? grunt.log.warn : grunt.fail.warn
