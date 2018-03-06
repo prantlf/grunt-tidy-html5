@@ -2,8 +2,9 @@
 
 [![NPM Downloads](https://nodei.co/npm/grunt-tidy-html5.png?downloads=true&stars=true)](https://www.npmjs.com/package/grunt-tidy-html5)
 
-This module provides a grunt multi-task for checking and fixing HTML files using [tidy-html5], wrapped for Node.js by [node-libtidy]. See the official [HTML Tidy]
-pages for more information.
+This module provides a grunt multi-task for checking and fixing HTML files
+using [tidy-html5], wrapped for Node.js by [node-libtidy]. See the official
+[HTML Tidy] pages for more information.
 
 ## Installation
 
@@ -123,6 +124,9 @@ The file will have the JSON format compatible with the JSON report produced by
 [grunt-html], which is backed up by gthe [Nu Html Checker (v.Nu)]. Marking the
 invalid code excerps is not supported.
 
+The JSON report file can be converted to a HTML report file using
+[grunt-html-html-report-converter].
+
 #### ignoreMissing
 Type: `Boolean`
 Default: `false`
@@ -187,4 +191,5 @@ Licensed under the MIT license.
 [all HTML Tidy options]: http://api.html-tidy.org/tidy/quickref_5.4.0.html
 [grunt-html]: https://github.com/jzaefferer/grunt-html
 [Nu Html Checker (v.Nu)]: https://validator.github.io/validator/
+[grunt-html-html-report-converter]: https://github.com/prantlf/grunt-html-html-report-converter
 
