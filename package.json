@@ -35,7 +35,7 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "chalk": "^2.3.1",
+    "chalk": "^2.4.1",
     "mkdirp": "^0.5.1",
     "libtidy": "^0.3.7"
   },
@@ -49,8 +49,8 @@
     "grunt-istanbul": "^0.8.0",
     "grunt-standard": "^3.1.0",
     "nsp": "^3.2.1",
-    "travis-deploy-once": "^4.3.4",
-    "semantic-release": "^15.0.0"
+    "travis-deploy-once": "^4.4.1",
+    "semantic-release": "^15.1.7"
   },
   "keywords": [
     "gruntplugin",

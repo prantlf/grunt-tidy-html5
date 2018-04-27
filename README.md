@@ -167,6 +167,7 @@ your code using Grunt.
 
 ## Release History
 
+ * 2018-04-27   v1.0.0   Dropped support of Node.js 4
  * 2018-03-06   v0.1.0   Write report to a file as JSON
  * 2018-02-26   v0.0.1   Initial release
 
