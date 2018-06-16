@@ -23,7 +23,7 @@
     }
   ],
   "engines": {
-    "node": ">= 4.0.0"
+    "node": ">=6"
   },
   "main": "tasks/tidy-html5.js",
   "scripts": {
