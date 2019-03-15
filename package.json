@@ -34,8 +34,7 @@
   "dependencies": {
     "chalk": "^2.4.2",
     "libtidy": "^0.3.7",
-    "mkdirp": "^0.5.1",
-    "npm-check-updates": "3.0.9"
+    "mkdirp": "^0.5.1"
   },
   "devDependencies": {
     "grunt": "^1.0.3",
