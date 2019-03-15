@@ -29,26 +29,23 @@
   "scripts": {
     "test": "grunt",
     "coverage": "grunt instrument && GRUNT_TIDY_HTML5_COVERAGE=1 grunt",
-    "coveralls": "test `node --version | cut -c 2` -eq 8 && npm run coverage && grunt coveralls",
-    "travis-deploy-once": "travis-deploy-once",
-    "semantic-release": "semantic-release"
+    "coveralls": "test `node --version | cut -c 2` -eq 8 && npm run coverage && grunt coveralls"
   },
   "dependencies": {
-    "chalk": "^2.4.1",
+    "chalk": "^2.4.2",
+    "libtidy": "^0.3.7",
     "mkdirp": "^0.5.1",
-    "libtidy": "^0.3.7"
+    "npm-check-updates": "3.0.9"
   },
   "devDependencies": {
     "grunt": "^1.0.3",
     "grunt-continue-ext": "^2.0.0",
-    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-clean": "^2.0.0",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-nodeunit": "^2.0.0",
     "grunt-coveralls": "^2.0.0",
     "grunt-istanbul": "^0.8.0",
-    "grunt-standard": "^3.1.0",
-    "semantic-release": "^15.9.14",
-    "travis-deploy-once": "^5.0.7"
+    "grunt-standard": "^3.1.0"
   },
   "keywords": [
     "gruntplugin",
